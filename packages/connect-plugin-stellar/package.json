@@ -34,7 +34,7 @@
         "@stellar/stellar-sdk": "^12.1.0"
     },
     "dependencies": {
-        "@trezor/utils": "workspace:*"
+        "@trezor/utils": "1.0.0"
     },
     "scripts": {
         "lint:js": "yarn g:eslint '**/*.{ts,tsx,js}'",
