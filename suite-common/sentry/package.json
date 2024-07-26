@@ -14,6 +14,6 @@
         "@sentry/integrations": "^7.100.1",
         "@sentry/types": "^7.100.1",
         "@suite-common/suite-utils": "workspace:*",
-        "@trezor/utils": "workspace:*"
+        "@trezor/utils": "1.0.0"
     }
 }
