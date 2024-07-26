@@ -16,7 +16,7 @@
         "@suite-common/wallet-types": "workspace:*",
         "@suite-common/wallet-utils": "workspace:*",
         "@suite-native/settings": "workspace:*",
-        "@trezor/blockchain-link": "workspace:*",
+        "@trezor/blockchain-link": "1.0.1",
         "proxy-memoize": "2.0.2",
         "react": "18.2.0"
     }
