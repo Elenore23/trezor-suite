@@ -11,6 +11,6 @@
         "type-check": "yarn g:tsc --build"
     },
     "dependencies": {
-        "@trezor/analytics": "workspace:*"
+        "@trezor/analytics": "1.0.0"
     }
 }
