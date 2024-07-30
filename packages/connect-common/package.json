@@ -39,7 +39,7 @@
         "prepublish": "yarn tsx ../../scripts/prepublish.js"
     },
     "dependencies": {
-        "@trezor/env-utils": "workspace:*",
+        "@trezor/env-utils": "1.0.0",
         "@trezor/utils": "workspace:*"
     },
     "peerDependencies": {
