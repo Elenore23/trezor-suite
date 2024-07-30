@@ -23,7 +23,7 @@
         "@trezor/connect": "workspace:*",
         "@trezor/env-utils": "workspace:*",
         "@trezor/urls": "workspace:*",
-        "@trezor/utils": "workspace:*"
+        "@trezor/utils": "1.0.0"
     },
     "devDependencies": {
         "@mobily/ts-belt": "^3.13.1",
