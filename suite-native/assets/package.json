@@ -25,7 +25,7 @@
         "@suite-native/navigation": "workspace:*",
         "@suite-native/settings": "workspace:*",
         "@trezor/styles": "workspace:*",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "proxy-memoize": "2.0.2",
         "react": "^18.2.0",
         "react-native": "0.74.1",
