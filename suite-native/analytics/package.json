@@ -20,6 +20,6 @@
         "@suite-native/config": "workspace:*",
         "@trezor/analytics": "workspace:*",
         "@trezor/connect": "workspace:*",
-        "@trezor/env-utils": "workspace:*"
+        "@trezor/env-utils": "1.0.0"
     }
 }
