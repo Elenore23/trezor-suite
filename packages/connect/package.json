@@ -72,7 +72,7 @@
         "@ethereumjs/tx": "^5.3.0",
         "@fivebinaries/coin-selection": "2.2.1",
         "@trezor/blockchain-link": "workspace:*",
-        "@trezor/blockchain-link-types": "workspace:*",
+        "@trezor/blockchain-link-types": "1.0.0",
         "@trezor/connect-analytics": "workspace:*",
         "@trezor/connect-common": "workspace:*",
         "@trezor/protobuf": "workspace:*",
