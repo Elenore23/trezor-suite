@@ -34,7 +34,7 @@
         "@suite-native/link": "workspace:*",
         "@suite-native/navigation": "workspace:*",
         "@suite-native/settings": "workspace:*",
-        "@trezor/blockchain-link-types": "workspace:*",
+        "@trezor/blockchain-link-types": "1.0.0",
         "@trezor/styles": "workspace:*",
         "@trezor/theme": "workspace:*",
         "proxy-memoize": "2.0.2",
