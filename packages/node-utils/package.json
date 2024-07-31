@@ -13,6 +13,6 @@
     },
     "dependencies": {
         "@trezor/type-utils": "workspace:*",
-        "@trezor/utils": "workspace:*"
+        "@trezor/utils": "1.0.0"
     }
 }
