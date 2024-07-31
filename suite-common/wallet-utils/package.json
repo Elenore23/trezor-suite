@@ -27,7 +27,7 @@
         "@suite-common/wallet-types": "workspace:*",
         "@trezor/address-validator": "workspace:*",
         "@trezor/blockchain-link": "workspace:*",
-        "@trezor/blockchain-link-types": "workspace:*",
+        "@trezor/blockchain-link-types": "1.0.0",
         "@trezor/blockchain-link-utils": "workspace:*",
         "@trezor/connect": "workspace:*",
         "@trezor/device-utils": "workspace:*",
