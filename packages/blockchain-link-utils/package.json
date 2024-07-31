@@ -23,7 +23,7 @@
     "dependencies": {
         "@mobily/ts-belt": "^3.13.1",
         "@solana/web3.js": "^1.95.0",
-        "@trezor/env-utils": "workspace:*",
+        "@trezor/env-utils": "1.0.0",
         "@trezor/utils": "workspace:*"
     },
     "devDependencies": {
