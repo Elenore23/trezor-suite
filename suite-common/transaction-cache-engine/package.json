@@ -14,7 +14,7 @@
     "dependencies": {
         "@mobily/ts-belt": "^3.13.1",
         "@suite-common/wallet-config": "workspace:*",
-        "@trezor/connect": "workspace:*",
+        "@trezor/connect": "9.0.0",
         "@trezor/utils": "workspace:*"
     }
 }
