@@ -6,8 +6,8 @@ import { DashboardActions } from './pageActions/dashboardActions';
 import { launchSuite } from './common';
 import { SettingsActions } from './pageActions/settingsActions';
 import { SuiteGuide } from './pageActions/suiteGuideActions';
-import { TopBarActions } from './pageActions/topBarActions';
 import { WalletActions } from './pageActions/walletActions';
+import { OnboardingActions } from './pageActions/onboardingActions';
 
 type Fixtures = {
     electronApp: ElectronApplication;
@@ -15,8 +15,8 @@ type Fixtures = {
     dashboardPage: DashboardActions;
     settingsPage: SettingsActions;
     suiteGuidePage: SuiteGuide;
-    topBar: TopBarActions;
     walletPage: WalletActions;
+    onboardingPage: OnboardingActions;
 };
 
 const test = base.extend<Fixtures>({
@@ -45,13 +45,13 @@ const test = base.extend<Fixtures>({
         const suiteGuidePage = new SuiteGuide(window);
         await use(suiteGuidePage);
     },
-    topBar: async ({ window }, use) => {
-        const topBar = new TopBarActions(window);
-        await use(topBar);
-    },
     walletPage: async ({ window }, use) => {
         const walletPage = new WalletActions(window);
         await use(walletPage);
+    },
+    onboardingPage: async ({ window }, use) => {
+        const onboardingPage = new OnboardingActions(window);
+        await use(onboardingPage);
     },
 });
 

@@ -14,7 +14,7 @@ import {
     Row,
     Text,
     Grid,
-    InfoPair,
+    InfoSegments,
     H4,
 } from '@trezor/components';
 import { NetworkSymbol } from '@suite-common/wallet-config';
@@ -53,7 +53,7 @@ const IOItem = ({ anonymitySet, address, symbol, amount, isPhishingTransaction }
     const anonymity = address && anonymitySet?.[address];
 
     return (
-        <Column alignItems="normal">
+        <Column>
             <IOAddress
                 txAddress={address ?? ''}
                 explorerUrl={network?.explorer.address}
@@ -101,17 +101,14 @@ const IOGroup = ({ tx, inputs, outputs, isPhishingTransaction }: IOGroupProps) =
             </IconWrapper>
             <Grid columns={2} gap={spacings.xxxxl}>
                 {hasInputs && (
-                    <Column alignItems="normal" gap={spacings.xs} margin={{ right: spacings.xl }}>
-                        <InfoPair
-                            leftContent={
-                                <Text typographyStyle="callout" variant="default">
-                                    <Translation id="TR_INPUTS" />
-                                </Text>
-                            }
-                            rightContent={inputs.length}
-                            typographyStyle="hint"
-                            variant="tertiary"
-                        />
+                    <Column gap={spacings.xs} margin={{ right: spacings.xl }}>
+                        <InfoSegments typographyStyle="hint" variant="tertiary">
+                            <Text typographyStyle="callout" variant="default">
+                                <Translation id="TR_INPUTS" />
+                            </Text>
+                            {inputs.length}
+                        </InfoSegments>
+
                         {inputs.map(input => (
                             <IOItem
                                 key={`input-${input.n}`}
@@ -125,17 +122,13 @@ const IOGroup = ({ tx, inputs, outputs, isPhishingTransaction }: IOGroupProps) =
                     </Column>
                 )}
                 {hasOutputs && (
-                    <Column alignItems="normal" gap={spacings.xs} margin={{ left: spacings.xl }}>
-                        <InfoPair
-                            leftContent={
-                                <Text typographyStyle="callout" variant="default">
-                                    <Translation id="TR_OUTPUTS" />
-                                </Text>
-                            }
-                            rightContent={outputs.length}
-                            typographyStyle="hint"
-                            variant="tertiary"
-                        />
+                    <Column gap={spacings.xs} margin={{ left: spacings.xl }}>
+                        <InfoSegments typographyStyle="hint" variant="tertiary">
+                            <Text typographyStyle="callout" variant="default">
+                                <Translation id="TR_OUTPUTS" />
+                            </Text>
+                            {outputs.length}
+                        </InfoSegments>
                         {outputs.map(output => (
                             <IOItem
                                 key={`output-${output.n}`}
@@ -186,7 +179,7 @@ const EthereumSpecificBalanceDetailsRow = ({
     return (
         <>
             {tx.internalTransfers?.length ? (
-                <Column alignItems="normal" gap={spacings.xs}>
+                <Column gap={spacings.xs}>
                     <H4>
                         <Translation id="TR_INTERNAL_TRANSACTIONS" />
                     </H4>
@@ -203,7 +196,7 @@ const EthereumSpecificBalanceDetailsRow = ({
             ) : null}
 
             {Object.entries(tokensByStandard).map(([key, tokens]) => (
-                <Column key={key} alignItems="normal" gap={spacings.xs}>
+                <Column key={key} gap={spacings.xs}>
                     <H4>
                         <Translation
                             id="TR_TOKEN_TRANSFERS"
@@ -366,11 +359,9 @@ export const IODetails = ({ tx, isPhishingTransaction }: IODetailsProps) => {
     };
 
     return (
-        <Column alignItems="normal" gap={spacings.xxl}>
+        <Column gap={spacings.xxl}>
             <AnalyzeInExplorerBanner txid={tx.txid} symbol={tx.symbol} />
-            <Column alignItems="normal" gap={spacings.lg}>
-                {getContent()}
-            </Column>
+            <Column gap={spacings.lg}>{getContent()}</Column>
         </Column>
     );
 };

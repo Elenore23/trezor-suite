@@ -38,7 +38,8 @@ import {
 } from 'src/types/coinmarket/coinmarketForm';
 import {
     coinmarketGetSortedAccounts,
-    cryptoIdToNetworkSymbol,
+    cryptoIdToSymbol,
+    getAddressAndTokenFromAccountOptionsGroupProps,
     getCoinmarketNetworkDecimals,
 } from 'src/utils/wallet/coinmarket/coinmarketUtils';
 import { coinmarketGetExchangeReceiveCryptoId } from 'src/utils/wallet/coinmarket/exchangeUtils';
@@ -159,33 +160,24 @@ export const useCoinmarketFormActions = <T extends CoinmarketSellExchangeFormPro
     };
 
     const onCryptoCurrencyChange = async (selected: CoinmarketAccountOptionsGroupOptionProps) => {
-        const networkSymbol = cryptoIdToNetworkSymbol(selected.value);
+        const symbol = cryptoIdToSymbol(selected.value);
         const cryptoSelectedCurrent = getValues(FORM_SEND_CRYPTO_CURRENCY_SELECT);
         const isSameCryptoSelected =
             cryptoSelectedCurrent &&
             cryptoSelectedCurrent.descriptor === selected.descriptor &&
             cryptoSelectedCurrent.value === selected.value;
         const account = accountsSorted.find(
-            item => item.descriptor === selected.descriptor && item.symbol === networkSymbol,
+            item => item.descriptor === selected.descriptor && item.symbol === symbol,
         );
 
         if (!account || isSameCryptoSelected) return;
 
-        setValue(FORM_OUTPUT_ADDRESS, '');
-        setValue(FORM_OUTPUT_AMOUNT, '');
-        setValue(FORM_CRYPTO_TOKEN, selected?.contractAddress ?? null);
-
-        if (account.networkType === 'ethereum') {
-            // set token address for ERC20 transaction to estimate the fees more precisely
-            setValue(FORM_OUTPUT_ADDRESS, selected?.contractAddress ?? '');
-        }
-        if (account.networkType === 'solana' && !selected?.contractAddress) {
-            setValue(FORM_OUTPUT_ADDRESS, selected?.descriptor ?? '');
-        }
-
+        const { address, token } = getAddressAndTokenFromAccountOptionsGroupProps(selected);
+        setValue(FORM_OUTPUT_ADDRESS, address);
+        setValue(FORM_CRYPTO_TOKEN, token);
         setValue(FORM_OUTPUT_MAX, undefined);
-        setValue(FORM_OUTPUT_AMOUNT, '');
         setValue(FORM_OUTPUT_FIAT, '');
+        setValue(FORM_OUTPUT_AMOUNT, '');
         setAmountLimits(undefined);
         setComposedLevels(undefined);
 

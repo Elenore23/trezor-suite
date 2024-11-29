@@ -45,6 +45,7 @@ export const ENUM_KEYS = [
     'RecoveryStatus',
     'BackupAvailability',
     'RecoveryType',
+    'DisplayRotation',
 ];
 
 // type rule fixes, ideally it should not be here
@@ -154,9 +155,10 @@ export const TYPE_PATCH = {
     'Features.passphrase_always_on_device': 'boolean | null',
     'Features.safety_checks': 'SafetyCheckLevel | null',
     'Features.auto_lock_delay_ms': 'number | null',
-    'Features.display_rotation': 'number | null',
+    'Features.display_rotation': 'DisplayRotation | null',
     'Features.experimental_features': 'boolean | null',
     'Features.internal_model': DeviceModelInternal,
+    'ApplySettings.display_rotation': 'DisplayRotation | Enum_DisplayRotation',
     'HDNodePathType.node': 'HDNodeType | string',
     'FirmwareUpload.payload': 'Buffer | ArrayBuffer',
     'EthereumGetAddress.encoded_network': 'ArrayBuffer',

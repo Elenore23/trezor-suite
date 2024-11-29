@@ -5,7 +5,8 @@ import { FormState, Output } from '@suite-common/wallet-types';
 
 import {
     buildFiatOption,
-    cryptoIdToNetworkSymbol,
+    cryptoIdToSymbol,
+    getAddressAndTokenFromAccountOptionsGroupProps,
 } from 'src/utils/wallet/coinmarket/coinmarketUtils';
 import { Account } from 'src/types/wallet';
 import { selectLocalCurrency } from 'src/reducers/wallet/settingsReducer';
@@ -36,6 +37,9 @@ export const useCoinmarketExchangeFormDefaultValues = (
 ): CoinmarketExchangeFormDefaultValuesProps => {
     const { buildDefaultCryptoOption } = useCoinmarketInfo();
     const localCurrency = useSelector(selectLocalCurrency);
+    const prefilledFromCryptoId = useSelector(
+        state => state.wallet.coinmarket.prefilledFromCryptoId,
+    );
     const defaultCurrency = useMemo(() => buildFiatOption(localCurrency), [localCurrency]);
     const cryptoGroups = useCoinmarketBuildAccountGroups('exchange');
     const cryptoOptions = useMemo(
@@ -44,13 +48,18 @@ export const useCoinmarketExchangeFormDefaultValues = (
     );
     const defaultSendCryptoSelect = useMemo(
         () =>
+            (prefilledFromCryptoId &&
+                cryptoOptions.find(option => option.value === prefilledFromCryptoId)) ||
             cryptoOptions.find(
                 option =>
                     option.descriptor === account.descriptor &&
-                    cryptoIdToNetworkSymbol(option.value) === account.symbol,
+                    cryptoIdToSymbol(option.value) === account.symbol,
             ),
-        [account.descriptor, account.symbol, cryptoOptions],
+        [account.descriptor, account.symbol, prefilledFromCryptoId, cryptoOptions],
     );
+    const { address, token } =
+        getAddressAndTokenFromAccountOptionsGroupProps(defaultSendCryptoSelect);
+
     const defaultReceiveCryptoSelect = useMemo(
         () =>
             buildDefaultCryptoOption(
@@ -63,8 +72,10 @@ export const useCoinmarketExchangeFormDefaultValues = (
         () => ({
             ...DEFAULT_PAYMENT,
             currency: defaultCurrency,
+            address,
+            token,
         }),
-        [defaultCurrency],
+        [address, defaultCurrency, token],
     );
     const defaultFormState: FormState = useMemo(
         () => ({

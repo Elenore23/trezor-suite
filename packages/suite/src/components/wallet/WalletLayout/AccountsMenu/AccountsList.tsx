@@ -17,6 +17,8 @@ import { AccountItemSkeleton } from './AccountItemSkeleton';
 import { AccountGroup } from './AccountGroup';
 import { AccountsMenuNotice } from './AccountsMenuNotice';
 import { AccountSection } from './AccountSection';
+import { ExpandedSidebarOnly } from '../../../suite/layouts/SuiteLayout/Sidebar/ExpandedSidebarOnly';
+import { CollapsedSidebarOnly } from '../../../suite/layouts/SuiteLayout/Sidebar/CollapsedSidebarOnly';
 
 interface AccountListProps {
     onItemClick?: () => void;
@@ -99,14 +101,8 @@ export const AccountsList = ({ onItemClick }: AccountListProps) => {
         const isSkeletonShown =
             discoveryInProgress || (type === 'coinjoin' && coinjoinIsPreloading);
 
-        return (
-            <AccountGroup
-                key={`${device.state}-${type}`}
-                type={type}
-                hideLabel={hideLabel}
-                hasBalance={groupHasBalance}
-                keepOpen={keepOpen(type)}
-            >
+        const Accounts = () => (
+            <>
                 {accounts.map(account => {
                     const selected = !!isSelected(account);
 
@@ -121,13 +117,32 @@ export const AccountsList = ({ onItemClick }: AccountListProps) => {
                     );
                 })}
                 {isSkeletonShown && <AccountItemSkeleton />}
-            </AccountGroup>
+            </>
+        );
+
+        return (
+            <>
+                <ExpandedSidebarOnly>
+                    <AccountGroup
+                        key={`${device.state}-${type}`}
+                        type={type}
+                        hideLabel={hideLabel}
+                        hasBalance={groupHasBalance}
+                        keepOpen={keepOpen(type)}
+                    >
+                        <Accounts />
+                    </AccountGroup>
+                </ExpandedSidebarOnly>
+                <CollapsedSidebarOnly>
+                    <Accounts />
+                </CollapsedSidebarOnly>
+            </>
         );
     };
 
     if (filteredAccounts.length > 0) {
         return (
-            <Column gap={spacings.xs} alignItems="stretch" margin={{ bottom: spacings.lg }}>
+            <Column gap={spacings.xs} margin={{ bottom: spacings.lg }}>
                 {buildGroup('coinjoin', coinjoinAccounts)}
                 {buildGroup('normal', normalAccounts, coinjoinAccounts.length === null)}
                 {buildGroup('taproot', taprootAccounts)}

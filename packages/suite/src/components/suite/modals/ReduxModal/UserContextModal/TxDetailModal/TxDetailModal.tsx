@@ -103,7 +103,7 @@ export const TxDetailModal = ({ tx, rbfForm, onCancel }: TxDetailModalProps) => 
             bottomContent={getBottomContent()}
             onBackClick={section === 'CHANGE_FEE' ? onBackClick : undefined}
         >
-            <Column alignItems="normal" gap={spacings.lg}>
+            <Column gap={spacings.lg}>
                 <BasicTxDetails
                     explorerUrl={blockchain.explorer.tx}
                     explorerUrlQueryString={blockchain.explorer.queryString}
@@ -119,7 +119,7 @@ export const TxDetailModal = ({ tx, rbfForm, onCancel }: TxDetailModalProps) => 
                             values={{
                                 a: chunks => (
                                     <TrezorLink
-                                        type="hint"
+                                        typographyStyle="hint"
                                         href={HELP_CENTER_ZERO_VALUE_ATTACKS}
                                         variant="underline"
                                     >

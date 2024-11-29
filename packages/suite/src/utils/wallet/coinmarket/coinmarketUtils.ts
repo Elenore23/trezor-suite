@@ -8,6 +8,7 @@ import {
     getNetworkByCoingeckoId,
     getNetworkByCoingeckoNativeId,
     getNetworkFeatures,
+    getNetworkType,
     networks,
 } from '@suite-common/wallet-config';
 import TrezorConnect from '@trezor/connect';
@@ -57,12 +58,12 @@ export function cryptoIdToNetwork(cryptoId: CryptoId): Network | undefined {
         : getNetworkByCoingeckoNativeId(networkId);
 }
 
-export function cryptoIdToNetworkSymbol(cryptoId: CryptoId): NetworkSymbol | undefined {
+export function cryptoIdToSymbol(cryptoId: CryptoId): NetworkSymbol | undefined {
     return cryptoIdToNetwork(cryptoId)?.symbol;
 }
 
-export function toTokenCryptoId(networkId: NetworkSymbol, contractAddress: string): CryptoId {
-    return `${getCoingeckoId(networkId)}${cryptoPlatformSeparator}${contractAddress}` as CryptoId;
+export function toTokenCryptoId(symbol: NetworkSymbol, contractAddress: string): CryptoId {
+    return `${getCoingeckoId(symbol)}${cryptoPlatformSeparator}${contractAddress}` as CryptoId;
 }
 
 /** Convert testnet cryptoId to prod cryptoId (test-bitcoin -> bitcoin) */
@@ -73,8 +74,8 @@ export function testnetToProdCryptoId(cryptoId: CryptoId): CryptoId {
         (contractAddress ? `${cryptoPlatformSeparator}${contractAddress}` : '')) as CryptoId;
 }
 
-export const getNetworkName = (networkSymbol: NetworkSymbol) => {
-    return networks[networkSymbol].name;
+export const getNetworkName = (symbol: NetworkSymbol) => {
+    return networks[symbol].name;
 };
 
 interface CoinmarketGetDecimalsProps {
@@ -205,7 +206,6 @@ export const getComposeAddressPlaceholder = async (
             // return '37btjrVyb4KDXBNC4haBVPCrro8AQPHwvCMp3RFhhSVWwfFmZ6wwzSK6JK1hY6wHNmtrpTf1kdbva8TCneM2YsiXT7mrzT21EacHnPpz5YyUdj64na';
             return '';
         case 'solana':
-            return '';
         case 'ethereum':
         case 'ripple':
             return account.descriptor;
@@ -213,7 +213,9 @@ export const getComposeAddressPlaceholder = async (
     }
 };
 
-export const mapTestnetSymbol = (symbol: NetworkSymbol) => {
+export const mapTestnetSymbol = (
+    symbol: NetworkSymbol,
+): Exclude<NetworkSymbol, 'test' | 'tsep' | 'thol' | 'txrp' | 'tada'> => {
     if (symbol === 'test') return 'btc';
     if (symbol === 'tsep') return 'eth';
     if (symbol === 'thol') return 'eth';
@@ -490,4 +492,34 @@ export const coinmarketGetSectionActionLabel = (
     if (type === 'sell') return 'TR_COINMARKET_SELL';
 
     return 'TR_COINMARKET_SWAP';
+};
+
+interface GetAddressAndTokenFromAccountOptionsGroupProps {
+    address: string;
+    token: string | null;
+}
+
+export const getAddressAndTokenFromAccountOptionsGroupProps = (
+    selected: CoinmarketAccountOptionsGroupOptionProps | undefined,
+): GetAddressAndTokenFromAccountOptionsGroupProps => {
+    if (!selected) {
+        return { address: '', token: null };
+    }
+
+    const networkSymbol = cryptoIdToSymbol(selected.value);
+    const networkType = networkSymbol ? getNetworkType(networkSymbol) : null;
+
+    // set token address for ERC20 transaction to estimate the fees more precisely
+    if (networkType === 'ethereum') {
+        return {
+            address: selected.contractAddress ?? '',
+            token: selected.contractAddress ?? null,
+        };
+    }
+
+    if (networkType === 'solana' && !selected.contractAddress) {
+        return { address: selected.descriptor, token: null };
+    }
+
+    return { address: '', token: selected.contractAddress ?? null };
 };

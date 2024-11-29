@@ -1,6 +1,6 @@
 import { TrezorUserEnvLink } from '@trezor/trezor-user-env-link';
 
-import { test } from '../../support/fixtures';
+import { test, expect } from '../../support/fixtures';
 
 test.describe.serial('Suite works with Electrum server', () => {
     test.beforeAll(async () => {
@@ -14,8 +14,8 @@ test.describe.serial('Suite works with Electrum server', () => {
     });
 
     test('Electrum completes discovery successfully', async ({
+        onboardingPage,
         dashboardPage,
-        topBar,
         settingsPage,
     }) => {
         test.info().annotations.push({
@@ -24,19 +24,18 @@ test.describe.serial('Suite works with Electrum server', () => {
                 'This test needs running RegTest docker. Read how to run this dependency in docs/tests/regtest.md',
         });
         const electrumUrl = '127.0.0.1:50001:t';
-
-        await dashboardPage.passThroughInitialRun();
+        await onboardingPage.completeOnboarding();
         await dashboardPage.discoveryShouldFinish();
 
-        await topBar.openSettings();
+        await settingsPage.navigateTo();
         await settingsPage.toggleDebugModeInSettings();
-        await settingsPage.goToSettingSection('wallet');
-        await settingsPage.openNetworkSettings('regtest');
-        await settingsPage.changeNetworkBackend('electrum', electrumUrl);
+        await settingsPage.coinsTabButton.click();
+        await settingsPage.openCoinAdvanceSettings('regtest');
+        await settingsPage.changeCoinBackend('electrum', electrumUrl);
 
-        await topBar.openDashboard();
+        await dashboardPage.navigateTo();
         await dashboardPage.discoveryShouldFinish();
 
-        await dashboardPage.assertHasVisibleBalanceOnFirstAccount('regtest');
+        await expect(dashboardPage.balanceOfNetwork('regtest').first()).toBeVisible();
     });
 });

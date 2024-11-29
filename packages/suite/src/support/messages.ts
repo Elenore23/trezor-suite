@@ -1419,6 +1419,10 @@ const messages = defineMessagesWithTypeCheck({
         defaultMessage: 'Swap',
         id: 'TR_COINMARKET_SWAP',
     },
+    TR_COINMARKET_SWAP_UNAVAILABLE: {
+        defaultMessage: 'Swap unavailable',
+        id: 'TR_COINMARKET_SWAP_UNAVAILABLE',
+    },
     TR_COINMARKET_TRANS_ID: {
         defaultMessage: 'Trans. ID:',
         id: 'TR_COINMARKET_TRANS_ID',
@@ -4986,6 +4990,10 @@ const messages = defineMessagesWithTypeCheck({
         id: 'TR_EXPERIMENTAL_FEATURES_WARNING',
         defaultMessage:
             'For experienced users only. Use at your own risk. These features are in testing, may be unstable, and might not have long-term support.',
+    },
+    TR_GO_TO_EXP_FEATURE: {
+        id: 'TR_GO_TO_EXP_FEATURE',
+        defaultMessage: 'Open',
     },
     TR_EXPERIMENTAL_PASSWORD_MANAGER: {
         id: 'TR_EXPERIMENTAL_PASSWORD_MANAGER',

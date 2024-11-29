@@ -13,6 +13,8 @@ import { TrezorDevice } from 'src/types/suite';
 import { DeviceDetail } from 'src/views/suite/SwitchDevice/DeviceItem/DeviceDetail';
 import { useSelector } from 'src/hooks/suite';
 
+import { ExpandedSidebarOnly } from '../Sidebar/ExpandedSidebarOnly';
+
 type DeviceStatusProps = {
     deviceModel: DeviceModelInternal;
     deviceNeedsRefresh?: boolean;
@@ -47,15 +49,17 @@ export const DeviceStatus = ({
                 />
             </DeviceWrapper>
 
-            {device && (
-                <DeviceDetail label={deviceLabel}>
-                    <DeviceStatusText
-                        onRefreshClick={handleRefreshClick}
-                        device={device}
-                        forceConnectionInfo={forceConnectionInfo}
-                    />
-                </DeviceDetail>
-            )}
+            <ExpandedSidebarOnly>
+                {device && (
+                    <DeviceDetail label={deviceLabel}>
+                        <DeviceStatusText
+                            onRefreshClick={handleRefreshClick}
+                            device={device}
+                            forceConnectionInfo={forceConnectionInfo}
+                        />
+                    </DeviceDetail>
+                )}
+            </ExpandedSidebarOnly>
         </Row>
     );
 };

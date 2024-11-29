@@ -67,7 +67,7 @@ export const CoinmarketFormInputs = () => {
                     label="TR_COINMARKET_YOU_SELL"
                     methods={{ ...context }}
                 />
-                <Column alignItems="stretch" gap={spacings.xs}>
+                <Column gap={spacings.xs}>
                     <CoinmarketFormInputFiatCrypto<CoinmarketSellFormProps>
                         cryptoInputName={FORM_OUTPUT_AMOUNT}
                         fiatInputName={FORM_OUTPUT_FIAT}
@@ -86,7 +86,7 @@ export const CoinmarketFormInputs = () => {
                             <CoinmarketBalance
                                 balance={outputAmount}
                                 cryptoSymbolLabel={sendCryptoSelect?.value}
-                                networkSymbol={account.symbol}
+                                symbol={account.symbol}
                                 tokenAddress={tokenAddress as TokenAddress}
                                 showOnlyAmount
                                 amountInCrypto={amountInCrypto}
@@ -148,7 +148,7 @@ export const CoinmarketFormInputs = () => {
                     label="TR_FROM"
                     methods={{ ...context }}
                 />
-                <Column alignItems="stretch" gap={spacings.xs}>
+                <Column gap={spacings.xs}>
                     <CoinmarketFormInputFiatCrypto<CoinmarketExchangeFormProps>
                         cryptoInputName={FORM_OUTPUT_AMOUNT}
                         fiatInputName={FORM_OUTPUT_FIAT}
@@ -167,7 +167,7 @@ export const CoinmarketFormInputs = () => {
                             <CoinmarketBalance
                                 balance={outputAmount}
                                 cryptoSymbolLabel={sendCryptoSelect?.value}
-                                networkSymbol={account.symbol}
+                                symbol={account.symbol}
                                 tokenAddress={tokenAddress}
                                 showOnlyAmount
                                 amountInCrypto={amountInCrypto}

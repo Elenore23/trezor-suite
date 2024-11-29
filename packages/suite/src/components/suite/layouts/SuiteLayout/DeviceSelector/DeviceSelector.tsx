@@ -14,6 +14,8 @@ import { useDispatch, useSelector } from 'src/hooks/suite';
 import { ViewOnlyTooltip } from 'src/views/view-only/ViewOnlyTooltip';
 
 import { SidebarDeviceStatus } from './SidebarDeviceStatus';
+import { ExpandedSidebarOnly } from '../Sidebar/ExpandedSidebarOnly';
+import { useResponsiveContext } from '../../../../../support/suite/ResponsiveContext';
 
 const CaretContainer = styled.div`
     background: transparent;
@@ -22,7 +24,7 @@ const CaretContainer = styled.div`
     transition: background 0.15s;
 `;
 
-const Wrapper = styled.div<{ $isAnimationTriggered?: boolean }>`
+const Wrapper = styled.div<{ $isAnimationTriggered?: boolean; $isSidebarCollapsed?: boolean }>`
     width: 100%;
     padding: ${spacingsPx.md} ${spacingsPx.md} ${spacingsPx.md} ${spacingsPx.md};
     align-items: center;
@@ -30,6 +32,12 @@ const Wrapper = styled.div<{ $isAnimationTriggered?: boolean }>`
     border: 1px solid transparent;
     transition: ${focusStyleTransition};
     white-space: nowrap;
+    ${({ $isSidebarCollapsed }) =>
+        $isSidebarCollapsed &&
+        css`
+            display: flex;
+            justify-content: center;
+        `}
 
     ${getFocusShadowStyle()};
 
@@ -56,6 +64,7 @@ const InnerContainer = styled.div`
     align-items: center;
     cursor: pointer;
     gap: ${spacingsPx.md};
+    min-height: 42px;
     -webkit-app-region: no-drag;
 `;
 
@@ -108,8 +117,13 @@ export const DeviceSelector = () => {
             }),
         );
 
+    const { isSidebarCollapsed } = useResponsiveContext();
+
     return (
-        <Wrapper $isAnimationTriggered={isAnimationTriggered}>
+        <Wrapper
+            $isAnimationTriggered={isAnimationTriggered}
+            $isSidebarCollapsed={isSidebarCollapsed}
+        >
             <ViewOnlyTooltip>
                 <InnerContainer
                     onClick={handleSwitchDeviceClick}
@@ -118,11 +132,13 @@ export const DeviceSelector = () => {
                 >
                     <SidebarDeviceStatus />
 
-                    {selectedDevice && selectedDevice.state && (
-                        <CaretContainer>
-                            <Icon size={20} name="caretCircleDown" />
-                        </CaretContainer>
-                    )}
+                    <ExpandedSidebarOnly>
+                        {selectedDevice && selectedDevice.state && (
+                            <CaretContainer>
+                                <Icon size={20} name="caretCircleDown" />
+                            </CaretContainer>
+                        )}
+                    </ExpandedSidebarOnly>
                 </InnerContainer>
             </ViewOnlyTooltip>
         </Wrapper>
