@@ -37,10 +37,10 @@
         "prepublish": "yarn build"
     },
     "dependencies": {
-        "@trezor/connect": "workspace:*",
-        "@trezor/connect-common": "workspace:*",
-        "@trezor/connect-web": "workspace:*",
-        "@trezor/utils": "workspace:*",
+        "@trezor/connect": "9.0.0",
+        "@trezor/connect-common": "0.0.1",
+        "@trezor/connect-web": "9.0.0",
+        "@trezor/utils": "1.0.0",
         "events": "^3.3.0"
     },
     "devDependencies": {
