@@ -19,7 +19,7 @@
         "@suite-native/analytics": "workspace:*",
         "@suite-native/intl": "workspace:*",
         "@suite-native/navigation": "workspace:*",
-        "@trezor/connect": "workspace:*",
+        "@trezor/connect": "9.0.0",
         "react": "18.2.0",
         "react-redux": "8.0.7"
     }
