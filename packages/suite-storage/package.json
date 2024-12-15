@@ -19,7 +19,7 @@
     "dependencies": {
         "@trezor/env-utils": "workspace:*",
         "@trezor/eslint": "workspace:*",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "broadcast-channel": "^7.0.0",
         "idb": "^8.0.0"
     }
