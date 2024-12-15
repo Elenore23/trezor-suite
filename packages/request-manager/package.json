@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "@trezor/node-utils": "workspace:^",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "socks-proxy-agent": "8.0.4"
     },
     "devDependencies": {
