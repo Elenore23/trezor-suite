@@ -65,7 +65,7 @@
     "dependencies": {
         "@trezor/protobuf": "workspace:*",
         "@trezor/protocol": "workspace:*",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "cross-fetch": "^4.0.0",
         "long": "^4.0.0",
         "protobufjs": "7.4.0",
