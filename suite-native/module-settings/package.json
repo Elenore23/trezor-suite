@@ -41,7 +41,7 @@
         "@suite-native/theme": "workspace:*",
         "@suite-native/toasts": "workspace:*",
         "@trezor/connect": "workspace:*",
-        "@trezor/env-utils": "workspace:*",
+        "@trezor/env-utils": "1.0.0",
         "@trezor/styles": "workspace:*",
         "@trezor/theme": "workspace:*",
         "expo-linear-gradient": "^14.0.1",
