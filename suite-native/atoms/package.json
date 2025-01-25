@@ -20,7 +20,7 @@
         "@suite-native/icons": "workspace:*",
         "@suite-native/intl": "workspace:^",
         "@suite-native/storage": "workspace:*",
-        "@trezor/env-utils": "workspace:*",
+        "@trezor/env-utils": "1.0.0",
         "@trezor/styles": "workspace:*",
         "@trezor/theme": "workspace:*",
         "expo-image": "^2.0.0",
