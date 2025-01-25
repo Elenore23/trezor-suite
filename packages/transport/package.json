@@ -64,7 +64,7 @@
     },
     "dependencies": {
         "@trezor/protobuf": "workspace:*",
-        "@trezor/protocol": "workspace:*",
+        "@trezor/protocol": "1.0.0",
         "@trezor/utils": "workspace:*",
         "cross-fetch": "^4.0.0",
         "long": "^4.0.0",
