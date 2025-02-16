@@ -25,12 +25,12 @@
     },
     "dependencies": {
         "@suite-common/suite-constants": "workspace:*",
-        "@trezor/blockchain-link": "workspace:*",
-        "@trezor/blockchain-link-types": "workspace:*",
+        "@trezor/blockchain-link": "1.0.1",
+        "@trezor/blockchain-link-types": "1.0.0",
         "@trezor/blockchain-link-utils": "workspace:*",
         "@trezor/eslint": "workspace:*",
         "@trezor/utils": "workspace:*",
-        "@trezor/utxo-lib": "workspace:*",
+        "@trezor/utxo-lib": "0.0.2",
         "cross-fetch": "^4.0.0",
         "golomb": "1.2.0",
         "n64": "^0.2.10"
