@@ -79,7 +79,7 @@
         "@trezor/protobuf": "workspace:*",
         "@trezor/protocol": "workspace:*",
         "@trezor/schema-utils": "workspace:*",
-        "@trezor/transport": "workspace:*",
+        "@trezor/transport": "1.0.0",
         "@trezor/utils": "workspace:*",
         "@trezor/utxo-lib": "workspace:*",
         "blakejs": "^1.2.1",
