@@ -13,7 +13,7 @@
     "dependencies": {
         "@react-navigation/native": "7.0.14",
         "@react-navigation/native-stack": "6.11.0",
-        "@reduxjs/toolkit": "1.9.5",
+        "@reduxjs/toolkit": "2.0.0",
         "@suite-common/graph": "workspace:*",
         "@suite-common/wallet-core": "workspace:*",
         "@suite-native/analytics": "workspace:*",
@@ -34,8 +34,8 @@
         "@trezor/styles": "workspace:*",
         "jotai": "1.9.1",
         "react": "18.2.0",
-        "react-native": "0.76.1",
+        "react-native": "0.79.0",
         "react-native-svg": "^15.9.0",
-        "react-redux": "8.0.7"
+        "react-redux": "9.0.0"
     }
 }
