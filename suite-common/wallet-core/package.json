@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "@mobily/ts-belt": "^3.13.1",
-        "@reduxjs/toolkit": "1.9.5",
+        "@reduxjs/toolkit": "2.0.0",
         "@suite-common/device-authenticity": "workspace:*",
         "@suite-common/fiat-services": "workspace:*",
         "@suite-common/redux-utils": "workspace:*",
@@ -29,11 +29,11 @@
         "@trezor/blockchain-link-types": "1.0.0",
         "@trezor/blockchain-link-utils": "1.0.0",
         "@trezor/connect": "9.0.0",
-        "@trezor/device-utils": "workspace:*",
+        "@trezor/device-utils": "1.0.0",
         "@trezor/env-utils": "workspace:*",
         "@trezor/type-utils": "workspace:*",
         "@trezor/utils": "1.0.0",
-        "date-fns": "^2.30.0",
+        "date-fns": "^3.0.0",
         "react-hook-form": "^7.53.1",
         "web3-utils": "^4.3.1"
     }
