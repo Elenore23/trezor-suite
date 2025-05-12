@@ -10,9 +10,9 @@
         "type-check": "yarn g:tsc --build"
     },
     "dependencies": {
-        "@reduxjs/toolkit": "1.9.5",
+        "@reduxjs/toolkit": "2.0.0",
         "@suite-common/suite-config": "workspace:*",
         "@suite-common/wallet-config": "workspace:*",
-        "@trezor/connect": "workspace:*"
+        "@trezor/connect": "9.0.0"
     }
 }
