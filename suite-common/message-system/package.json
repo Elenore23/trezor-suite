@@ -15,12 +15,12 @@
         "type-check": "yarn g:tsc --build"
     },
     "dependencies": {
-        "@reduxjs/toolkit": "1.9.5",
+        "@reduxjs/toolkit": "2.0.0",
         "@suite-common/redux-utils": "workspace:*",
         "@suite-common/suite-types": "workspace:*",
         "@suite-common/wallet-config": "workspace:*",
         "@trezor/connect": "9.0.0",
-        "@trezor/device-utils": "workspace:*",
+        "@trezor/device-utils": "1.0.0",
         "@trezor/env-utils": "workspace:*",
         "@trezor/utils": "workspace:*",
         "ajv": "^8.17.1",
