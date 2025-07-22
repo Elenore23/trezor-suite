@@ -43,7 +43,7 @@
         "@suite-native/video-assets": "workspace:*",
         "@trezor/connect": "9.0.0",
         "@trezor/styles": "workspace:*",
-        "@trezor/utxo-lib": "workspace:*",
+        "@trezor/utxo-lib": "0.0.2",
         "react": "18.2.0",
         "react-native": "0.76.1",
         "react-native-reanimated": "3.16.1",
