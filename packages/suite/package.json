@@ -57,7 +57,7 @@
         "@trezor/address-validator": "workspace:*",
         "@trezor/analytics": "workspace:*",
         "@trezor/blockchain-link": "workspace:*",
-        "@trezor/blockchain-link-types": "workspace:*",
+        "@trezor/blockchain-link-types": "1.0.0",
         "@trezor/blockchain-link-utils": "workspace:*",
         "@trezor/coinjoin": "workspace:*",
         "@trezor/components": "workspace:*",
