@@ -28,7 +28,7 @@
         "@suite-native/link": "workspace:*",
         "@suite-native/navigation": "workspace:*",
         "@suite-native/settings": "workspace:*",
-        "@trezor/connect": "workspace:*",
+        "@trezor/connect": "9.0.0",
         "@trezor/styles": "workspace:*",
         "lottie-react-native": "^7.1.0",
         "react": "18.2.0",
