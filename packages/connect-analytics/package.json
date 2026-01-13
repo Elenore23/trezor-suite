@@ -17,7 +17,7 @@
         "build:lib": "yarn g:rimraf lib && yarn g:tsc --build tsconfig.lib.json && ../../scripts/replace-imports.sh ./lib"
     },
     "dependencies": {
-        "@trezor/analytics": "workspace:*"
+        "@trezor/analytics": "1.0.0"
     },
     "peerDependencies": {
         "tslib": "^2.6.2"
