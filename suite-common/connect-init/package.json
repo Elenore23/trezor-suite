@@ -11,13 +11,13 @@
         "test-unit:watch": "yarn g:jest -c ../../jest.config.base.js -o --watch"
     },
     "dependencies": {
-        "@reduxjs/toolkit": "1.9.5",
+        "@reduxjs/toolkit": "2.0.0",
         "@suite-common/redux-utils": "workspace:*",
         "@suite-common/suite-types": "workspace:*",
         "@suite-common/suite-utils": "workspace:^",
         "@suite-common/test-utils": "workspace:*",
         "@suite-common/wallet-core": "workspace:*",
-        "@trezor/connect": "workspace:*",
+        "@trezor/connect": "9.0.0",
         "@trezor/env-utils": "workspace:^",
         "@trezor/suite-desktop-api": "workspace:*",
         "@trezor/utils": "workspace:*"
