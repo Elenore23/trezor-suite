@@ -39,7 +39,7 @@
         "@suite-native/qr-code": "workspace:*",
         "@suite-native/settings": "workspace:*",
         "@suite-native/tokens": "workspace:*",
-        "@trezor/blockchain-link-types": "workspace:*",
+        "@trezor/blockchain-link-types": "1.0.0",
         "@trezor/connect": "9.0.0",
         "@trezor/react-utils": "workspace:*",
         "@trezor/styles": "workspace:*",
