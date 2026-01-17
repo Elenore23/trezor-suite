@@ -34,7 +34,7 @@
         "prepublish": "yarn tsx ../../scripts/prepublish.js"
     },
     "dependencies": {
-        "@trezor/schema-utils": "workspace:*",
+        "@trezor/schema-utils": "1.0.0",
         "protobufjs": "7.4.0"
     },
     "devDependencies": {
