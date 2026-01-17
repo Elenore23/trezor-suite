@@ -22,7 +22,7 @@
         "@trezor/connect": "9.0.0",
         "@trezor/device-utils": "workspace:*",
         "@trezor/env-utils": "workspace:*",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "ajv": "^8.17.1",
         "fs-extra": "^11.2.0",
         "json-schema-to-typescript": "^13.1.2",
