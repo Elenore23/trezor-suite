@@ -44,7 +44,7 @@
         "@trezor/react-utils": "workspace:*",
         "@trezor/styles": "workspace:*",
         "@trezor/theme": "workspace:*",
-        "@trezor/transport": "workspace:*",
+        "@trezor/transport": "1.0.0",
         "@trezor/utils": "workspace:*",
         "expo-linear-gradient": "^14.0.1",
         "jotai": "1.9.1",
