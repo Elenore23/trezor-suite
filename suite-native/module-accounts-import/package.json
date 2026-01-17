@@ -15,7 +15,7 @@
         "@react-navigation/core": "^6.4.10",
         "@react-navigation/native": "6.1.18",
         "@react-navigation/native-stack": "6.11.0",
-        "@reduxjs/toolkit": "1.9.5",
+        "@reduxjs/toolkit": "2.0.0",
         "@shopify/flash-list": "^1.7.2",
         "@shopify/react-native-skia": "^1.5.10",
         "@suite-common/redux-utils": "workspace:*",
@@ -45,8 +45,8 @@
         "@trezor/styles": "workspace:*",
         "@trezor/utxo-lib": "workspace:*",
         "react": "18.2.0",
-        "react-native": "0.76.1",
+        "react-native": "0.79.0",
         "react-native-reanimated": "3.16.1",
-        "react-redux": "8.0.7"
+        "react-redux": "9.0.0"
     }
 }
