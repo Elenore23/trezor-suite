@@ -63,7 +63,7 @@
         "tsx": "^4.16.3"
     },
     "dependencies": {
-        "@trezor/protobuf": "workspace:*",
+        "@trezor/protobuf": "1.0.0",
         "@trezor/protocol": "workspace:*",
         "@trezor/utils": "workspace:*",
         "cross-fetch": "^4.0.0",
