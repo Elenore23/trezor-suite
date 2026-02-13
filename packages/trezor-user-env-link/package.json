@@ -9,7 +9,7 @@
         "type-check": "yarn g:tsc --build"
     },
     "dependencies": {
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "cross-fetch": "^4.0.0",
         "semver": "^7.6.3",
         "ws": "^8.18.0"
