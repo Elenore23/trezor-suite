@@ -34,11 +34,11 @@
         "@suite-native/staking": "workspace:*",
         "@suite-native/toasts": "workspace:*",
         "@suite-native/tokens": "workspace:*",
-        "@trezor/connect": "workspace:*",
+        "@trezor/connect": "9.0.0",
         "@trezor/styles": "workspace:*",
         "jotai": "1.9.1",
         "react": "18.2.0",
-        "react-native": "0.76.1",
+        "react-native": "0.84.0",
         "react-native-reanimated": "3.16.1",
         "react-redux": "8.0.7"
     }
