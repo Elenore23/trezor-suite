@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "@mobily/ts-belt": "^3.13.1",
-        "@reduxjs/toolkit": "1.9.5",
+        "@reduxjs/toolkit": "2.0.0",
         "@sentry/react-native": "6.1.0",
         "@suite-common/suite-types": "workspace:*",
         "@suite-common/wallet-core": "workspace:*",
@@ -22,7 +22,7 @@
         "expo-splash-screen": "^0.29.7",
         "jotai": "1.9.1",
         "react": "18.2.0",
-        "react-native": "0.76.1",
+        "react-native": "0.79.0",
         "react-native-mmkv": "2.12.2",
         "react-native-restart": "0.0.27",
         "redux-persist": "6.0.0"
