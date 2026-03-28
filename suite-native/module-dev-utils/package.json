@@ -25,12 +25,12 @@
         "@suite-native/navigation": "workspace:*",
         "@suite-native/storage": "workspace:*",
         "@suite-native/toasts": "workspace:*",
-        "@trezor/connect": "workspace:*",
+        "@trezor/connect": "9.5.4",
         "@trezor/env-utils": "workspace:*",
         "@trezor/styles": "workspace:*",
         "@trezor/theme": "workspace:*",
         "react": "18.2.0",
-        "react-native": "0.76.1",
+        "react-native": "0.79.0",
         "react-redux": "8.0.7"
     }
 }
