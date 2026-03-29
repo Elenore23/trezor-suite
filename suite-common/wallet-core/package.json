@@ -29,7 +29,7 @@
         "@trezor/blockchain-link-types": "1.0.0",
         "@trezor/blockchain-link-utils": "1.0.0",
         "@trezor/connect": "9.0.0",
-        "@trezor/device-utils": "workspace:*",
+        "@trezor/device-utils": "1.0.0",
         "@trezor/env-utils": "workspace:*",
         "@trezor/type-utils": "workspace:*",
         "@trezor/utils": "1.0.0",
