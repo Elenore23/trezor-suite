@@ -81,7 +81,7 @@
         "@trezor/schema-utils": "workspace:*",
         "@trezor/transport": "workspace:*",
         "@trezor/utils": "workspace:*",
-        "@trezor/utxo-lib": "workspace:*",
+        "@trezor/utxo-lib": "2.2.1",
         "blakejs": "^1.2.1",
         "bs58": "^6.0.0",
         "bs58check": "^4.0.0",
