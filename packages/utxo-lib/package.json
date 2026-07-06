@@ -52,7 +52,7 @@
         "@noble/hashes": "^2.0.1",
         "@scure/base": "^2.0.0",
         "@sinclair/typebox": "^0.34.49",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "cashaddrjs": "0.4.4",
         "varuint-bitcoin": "2.0.0",
         "wif": "^5.0.0"
