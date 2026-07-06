@@ -58,10 +58,10 @@
         "lint:js": "yarn g:eslint '**/*.{ts,tsx,js}'"
     },
     "dependencies": {
-        "@trezor/device-utils": "workspace:*",
-        "@trezor/protobuf": "workspace:*",
+        "@trezor/device-utils": "1.0.0",
+        "@trezor/protobuf": "1.0.0",
         "@trezor/protocol": "workspace:^",
-        "@trezor/schema-utils": "workspace:*",
+        "@trezor/schema-utils": "1.0.0",
         "@trezor/type-utils": "workspace:*",
         "@trezor/utils": "workspace:*"
     },
