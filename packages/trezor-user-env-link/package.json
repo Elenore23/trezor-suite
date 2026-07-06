@@ -11,8 +11,8 @@
         "lint:js": "yarn g:eslint '**/*.{ts,tsx,js}'"
     },
     "dependencies": {
-        "@trezor/utils": "workspace:*",
-        "@trezor/websocket-client": "workspace:*",
+        "@trezor/utils": "1.0.0",
+        "@trezor/websocket-client": "1.1.0",
         "cross-fetch": "^4.1.0"
     },
     "devDependencies": {
