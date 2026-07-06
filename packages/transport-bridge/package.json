@@ -31,7 +31,7 @@
         "@trezor/node-utils": "workspace:*",
         "@trezor/protocol": "workspace:*",
         "@trezor/theme": "workspace:*",
-        "@trezor/transport": "workspace:*",
+        "@trezor/transport": "1.0.0",
         "@trezor/transport-common": "workspace:*",
         "@trezor/utils": "workspace:*",
         "react": "19.2.3",
