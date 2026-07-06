@@ -19,7 +19,7 @@
         "@suite-native/icons": "workspace:*",
         "@suite-native/intl": "workspace:*",
         "@suite-native/toasts": "workspace:*",
-        "@trezor/connect": "workspace:*",
+        "@trezor/connect": "9.0.0",
         "@trezor/styles-native": "workspace:*",
         "@trezor/theme": "workspace:*",
         "expo-camera": "~56.0.7",
