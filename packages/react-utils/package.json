@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "@trezor/type-utils": "workspace:*",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "date-fns": "^4.1.0",
         "react": "19.2.3"
     },
