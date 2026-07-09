@@ -81,9 +81,9 @@
         "@trezor/coins-stellar": "workspace:*",
         "@trezor/coins-xrpl": "workspace:*",
         "@trezor/env-utils": "workspace:*",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "@trezor/utxo-lib": "0.0.2",
-        "@trezor/websocket-client": "workspace:*",
+        "@trezor/websocket-client": "1.1.0",
         "@types/web": "^0.0.345",
         "socks-proxy-agent": "8.0.5",
         "viem": "^2.54.2"
