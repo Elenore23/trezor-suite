@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "@shopify/react-native-skia": "2.5.1",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "@types/react": "19.2.14",
         "react": "19.2.3",
         "react-native": "0.85.3",
