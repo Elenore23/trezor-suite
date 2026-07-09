@@ -42,7 +42,7 @@
         "@suite-native/staking": "workspace:*",
         "@suite-native/tokens": "workspace:*",
         "@trezor/connect": "9.0.0",
-        "@trezor/device-utils": "workspace:*",
+        "@trezor/device-utils": "1.0.0",
         "@trezor/styles-native": "workspace:*",
         "@trezor/theme": "workspace:^",
         "@trezor/utils": "workspace:*",
