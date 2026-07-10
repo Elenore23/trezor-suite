@@ -40,7 +40,7 @@
         "@suite-native/storage": "workspace:*",
         "@suite-native/toasts": "workspace:*",
         "@suite-native/trading-state": "workspace:*",
-        "@trezor/connect-common": "workspace:^",
+        "@trezor/connect-common": "0.0.1",
         "@trezor/env-utils": "workspace:*",
         "expo": "~56.0.6",
         "react": "19.2.3",
