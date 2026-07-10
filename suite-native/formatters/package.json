@@ -24,7 +24,7 @@
         "@suite-native/intl": "workspace:*",
         "@suite-native/tokens": "workspace:*",
         "@trezor/env-utils": "workspace:*",
-        "@trezor/protobuf": "workspace:*",
+        "@trezor/protobuf": "1.0.0",
         "@trezor/styles-native": "workspace:*",
         "@trezor/theme": "workspace:*",
         "@trezor/utils": "workspace:*",
