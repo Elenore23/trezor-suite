@@ -45,7 +45,7 @@
         "react-native-svg": "15.15.5",
         "react-redux": "9.3.0",
         "redux": "^5.0.1",
-        "storybook": "^10.3.4",
+        "storybook": "^10.4.6",
         "type-fest": "5.5.0"
     },
     "devDependencies": {
