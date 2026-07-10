@@ -15,7 +15,7 @@
         "@suite-common/earn-stablecoin-defs": "workspace:*",
         "@suite-common/wallet-constants": "workspace:*",
         "@trezor/coins-solana": "workspace:*",
-        "@trezor/device-utils": "workspace:*",
+        "@trezor/device-utils": "1.0.0",
         "@trezor/type-utils": "workspace:*",
         "@trezor/utils": "workspace:*"
     }
