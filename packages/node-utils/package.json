@@ -14,7 +14,7 @@
     "dependencies": {
         "@braintree/sanitize-url": "^7.1.2",
         "@trezor/type-utils": "workspace:*",
-        "@trezor/utils": "workspace:*",
+        "@trezor/utils": "1.0.0",
         "ajv": "^8.20.0"
     }
 }
