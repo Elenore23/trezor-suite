@@ -11,6 +11,6 @@
         "lint:js": "yarn g:eslint '**/*.{ts,tsx,js}'"
     },
     "dependencies": {
-        "@trezor/utils": "workspace:*"
+        "@trezor/utils": "1.0.0"
     }
 }
